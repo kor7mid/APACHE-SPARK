@@ -20,7 +20,7 @@ docker cp -L titanic_tree.py 1079280ef99f:/opt/bitnami/spark/titanic_tree.py
     --files train.csv,test.csv \
     titanic_tree.py
 
-    pip install numpy
+    pip install numpy, pandas
 
 docker cp -L your_program.py spark_spark-master_1:/opt/bitnami/spark/anyfilename.py
 
