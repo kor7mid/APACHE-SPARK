@@ -1,0 +1,18 @@
+// se mettre dans le mm repertoire que le docker compose file puis lancer les commandes suivantes en fonctions des besoins
+
+
+docker-compose up -d   //executer le docker compose file
+
+docker-compose down
+
+=========================================
+export PYTHONPATH=/opt/bitnami/spark/python/lib/py4j-0.10.9.7-src.zip:/opt/bitnami/spark/python/:/opt/bitnami/spark/python/:
+export PYTHONSTARTUP=/opt/bitnami/spark/python/pyspark/shell.py
+exec "${SPARK_HOME}"/bin/spark-submit pyspark-shell-main
+
+=============================================
+os.getcwd()
+
+docker cp -L your_program.py spark_spark-master_1:/opt/bitnami/spark/anyfilename.py
+
+docker cp -L some_text.txt 0c7555eed097:/opt/bitnami/spark/some_text.txt
