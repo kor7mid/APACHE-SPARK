@@ -13,6 +13,19 @@ exec "${SPARK_HOME}"/bin/spark-submit pyspark-shell-main
 =============================================
 os.getcwd()
 
+docker cp -L titanic_tree.py 1079280ef99f:/opt/bitnami/spark/titanic_tree.py
+
+./bin/spark-submit \
+    --master spark://172.21.0.2:7077 \
+    --files train.csv,test.csv \
+    titanic_tree.py
+
+    pip install numpy
+
 docker cp -L your_program.py spark_spark-master_1:/opt/bitnami/spark/anyfilename.py
 
 docker cp -L some_text.txt 0c7555eed097:/opt/bitnami/spark/some_text.txt
+
+==========================================================================
+
+./bin/spark-submit   --master spark://172.21.0.2:7077  ./examples/src/main/python/pi.py 1000

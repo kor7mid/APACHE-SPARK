@@ -21,11 +21,11 @@ services:
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     depends_on:
       - spark-master
-  # Optional: Environment variables for worker-1
-  #    environment:
-  #      SPARK_MODE: worker
-  #      SPARK_WORKER_CORES: 2
-  #      SPARK_WORKER_MEMORY: 2g
+    # Optional: Environment variables for worker-1
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 1
+      SPARK_WORKER_MEMORY: 1g
 
   spark-worker-2:
     image: bitnami/spark:latest
@@ -33,4 +33,8 @@ services:
     depends_on:
       - spark-master
 
-# Optional: Environment variables for worker-2 (same as worker-1)
+    # Optional: Environment variables for worker-2 (same as worker-1)
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 1
+      SPARK_WORKER_MEMORY: 1g

@@ -23,9 +23,9 @@ def pre_processing(data_file, train=True):
     labels = df[labelCol].values
     data = [LabeledPoint(l, fts) for l, fts in zip(labels, features)]
     return sc.parallelize(data)
-with open(SparkFiles.get('titanic_train.csv')) as data_file:
+with open(SparkFiles.get('train.csv')) as data_file:
     trainingData = pre_processing(data_file)
-with open(SparkFiles.get('titanic_test.csv')) as data_file:
+with open(SparkFiles.get('test.csv')) as data_file:
     testingData = pre_processing(data_file, train=False)
 # Train a DecisionTree model.
 model = DecisionTree.trainClassifier(
